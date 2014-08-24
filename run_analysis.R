@@ -28,7 +28,7 @@ Test_ActivityLables<- read.table(data[1])
 
 DataSet <- rbind(DataSet,cbind(condition = "Test",Test_Subjects,Test_Activty,Test_Features))
 
-#Uses descriptive activity names to name the activities in the data set
+#Appropriately labels the data set with descriptive variable names. 
 
 FeatureNames <- read.table(data[2])
 colnames(DataSet) <- c("Condition","Subjects","Activity",as.character(FeatureNames[,2]))
@@ -42,7 +42,7 @@ StdCol = grep("std",colnames(DataSet))
 DataSet2 = cbind(DataSet[,c(1,2,3)],DataSet[,c(MeanCol[!MeanCol %in% FreqCol])],
                  DataSet[,c(StdCol)])
 
-#Appropriately labels the data set with descriptive variable names. 
+#Uses descriptive activity names to name the activities in the data set
 
 DataSet2$Activity <- factor(DataSet2$Activity,levels(factor(DataSet2$Activity)),
                             labels = Test_ActivityLables[,2])
