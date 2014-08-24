@@ -1,5 +1,10 @@
-#load data
+#The purpose of this project is to demonstrate one's ability to collect, work with, and clean a data set.
+#The goal is to prepare tidy data that can be used for later analysis. 
 
+#Data Set information: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
+
+
+#load data 
 if(!file.exists("data")) {
         dir.create("data")
 }
